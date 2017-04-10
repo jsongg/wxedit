@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1">
+<title>样式列表</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="<?php echo HOME_PUBLIC;?>css/default.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="<?php echo ADMIN_PUBLIC;?>js/themes/default/easyui.css" />
+<script type="text/javascript" src="<?php echo HOME_PUBLIC;?>js/ueditor/ueditor.config.js?v=1.1.10"></script>
+<script type="text/javascript" src="<?php echo HOME_PUBLIC;?>js/ueditor/ueditor.all.min.js?v=1.1.10"></script>
+</head>
+<body>
+<p><a href="{:U('Focus/addstyle')}" class="easyui-linkbutton l-btn" onclick="load2()" id=""><span class="l-btn-left"><span class="l-btn-text">添加样式</span></span></a></p>
+    <form id="form1" name="form1" method="post" action="{:U('save')}/sid/<?php echo $msg['sid']?>">
+      <table width="90%" class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <th width="100px">类型：</th>
+            <th><label for="typestr"></label>
+              <select name="typestr" id="typestr">
+                <option value="1" <?php if($stype==1){echo 'selected="selected"';}?>>关注引导</option>
+                <option value="2" <?php if($stype==2){echo 'selected="selected"';}?>>标题</option>
+                <option value="3" <?php if($stype==3){echo 'selected="selected"';}?>>内容区</option>
+                <option value="4" <?php if($stype==4){echo 'selected="selected"';}?>>互推账号</option>
+                <option value="5" <?php if($stype==5){echo 'selected="selected"';}?>>分割线</option>
+                <option value="6" <?php if($stype==6){echo 'selected="selected"';}?>>原文引导</option>
+                <option value="7" <?php if($stype==7){echo 'selected="selected"';}?>>其它</option>
+            </select></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>样式名称：</td>
+            <td><label for="stylestr"></label>
+            <input name="stylestr" type="text" id="stylestr" size="40" value="<?php echo $msg['sstyle'];?>"/><input name="id" type="hidden" value="<?php echo $msg['sid'];?>" /></td>
+          </tr>
+          <tr>
+            <td>样式代码：</td>
+            <td>
+    <script id="container" name="content" type="text/plain" style="max-width:750px;height:200px;margin-top:5px;"><?php echo $msg['scode'];?></script>
+    <script type="text/javascript">
+        //var ue = UE.getEditor('container');
+		var ue = UE.getEditor('container', {
+		toolbars: [['fullscreen', 'source', 'undo', 'redo', 'bold', 'italic', 'underline', 'fontborder', 'strikethrough', 'removeformat', 'autotypeset', 'blockquote', 'pasteplain', 'forecolor', 'backcolor', 'insertorderedlist', 'insertunorderedlist', 'selectall', 'cleardoc', 'rowspacingtop', 'rowspacingbottom', 'lineheight', 'indent', 'justifyleft', 'justifycenter', 'justifyright', 'fontfamily','fontsize','justifyjustify', 'touppercase', 'tolowercase', 'simpleupload', 'emotion', 'insertvideo', 'map', 'date', 'time', 'spechars', 'preview', 'searchreplace'], ['con', 'title', 'fork', 'guide', 'division', 'other', 'mystyle']],
+		autoHeightEnabled: false,
+		allowDivTransToP: false,
+		autoFloatEnabled: true,
+		enableAutoSave: false
+	});
+    </script>
+            
+            </td>
+            </tr>
+            <tr>
+            <td></td>
+            <td><input name="submit" type="submit" id="submit" value="保存" /></td>
+          </tr>
+        </tbody>
+      </table>
+    </form>
+    <br />
+    <br />
+</body>
+</html>
+

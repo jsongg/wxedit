@@ -1,0 +1,6 @@
+[ 2016-10-12T15:24:22+08:00 ] ::1 /wxeditorNew/
+ERR: SQLSTATE[HY000] [1045] Access denied for user 'zkwh'@'localhost' (using password: YES)
+
+[ 2016-10-12T15:25:38+08:00 ] ::1 /wxeditorNew/
+ERR: SQLSTATE[HY000] [1049] Unknown database 'zk_wxedit'
+
